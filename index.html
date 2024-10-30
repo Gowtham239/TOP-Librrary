@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Add Books to the Library</h1>
+        <button id="addBtn">Add New Book</button>
+        <dialog id="dialog">
+            <p>Add Book</p>
+            <form action="#" method="get" id="bookForm">
+                <div>
+                    <label for="bookTitle">Title: </label>
+                    <input type="text" id="bookTitle" required>
+                </div>
+
+                <div>
+                    <label for="bookAuthor">Author: </label>
+                    <input type="text" id="bookAuthor" required>
+                </div>
+                
+                <div>
+                    <label for="noOfPages">Pages: </label>
+                    <input type="number" value="0" id="noOfPages" min="1" required>
+                </div>
+
+                <button id="addBook" type="submit">Add Book</button>
+                <button id="closeBtn" type="button">Close</button>
+            </form>
+        </dialog>
+
+        <div id="booksContainer"></div>
+
+        <!-- <div class="books">
+            <p>bvjdb</p>
+            <p>ddj</p>
+            <p>ddj</p>
+        </div> -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
