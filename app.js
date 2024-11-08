@@ -1,15 +1,28 @@
 const myLibrary = [];
 
-function Book(title, author, pages, readStatus=false) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readStatus = readStatus;
+class Book {
+  constructor(title, author, pages, readStatus=false) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+  }
+
+  readBookStatus() {
+    this.readStatus = !this.readStatus;
+  }
 }
 
-Book.prototype.readBookStatus = function() {
-    this.readStatus = !this.readStatus;
-}
+// function Book(title, author, pages, readStatus=false) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.readStatus = readStatus;
+// }
+
+// Book.prototype.readBookStatus = function() {
+//     this.readStatus = !this.readStatus;
+// }
 
 
 function addBookToLibrary(e) {
@@ -59,7 +72,7 @@ function displayBooks() {
         readStatusEl.textContent = "Read Status: " + (book.readStatus ? "Read" : "Not Read");
         toggleReadButton.textContent = book.readStatus ? "Not Read" : "Read";
     })
-    div.appendChild(toggleReadButton)
+    div.appendChild(toggleReadButton);
 
     const deleteBookEl = document.createElement("button");
     deleteBookEl.classList.add("delete-book");
@@ -68,12 +81,7 @@ function displayBooks() {
       deleteBook(index);
     });
     div.appendChild(deleteBookEl);
-  })
-
-//   for (let i = 0; i < myLibrary.length; i++) {
-//     let book = myLibrary[i];
-    
-//   }
+  });
 }
 
 function deleteBook(index) {
@@ -81,7 +89,7 @@ function deleteBook(index) {
   displayBooks();
 }
 
-myLibrary.forEach(addBookToLibrary);
+// myLibrary.forEach(addBookToLibrary);
 
 const dialog = document.querySelector("#dialog");
 const addBtn = document.querySelector("#addBtn");
